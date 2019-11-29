@@ -19,13 +19,13 @@ import java.util.Random;
 
 public class GameActivity extends AppCompatActivity {
 
-    Random rand;
     public static final int MAX_QUESTIONS = 5;
+
+    Random rand;
     Button[] answerButtons;
 
     GameQuestion question;
     int questionCount;
-
     int score;
 
 
@@ -40,7 +40,7 @@ public class GameActivity extends AppCompatActivity {
         setContentView(R.layout.activity_game);
 
 
-        createNotificationChannels();
+        initNotificationChannels();
         notificationManagerCompat = NotificationManagerCompat.from(this);
 
 
@@ -91,8 +91,6 @@ public class GameActivity extends AppCompatActivity {
 
     public void triggerNextQuestion(){
         questionCount++;
-
-        //new question
         question = new GameQuestion(rand);
 
 
@@ -146,24 +144,24 @@ public class GameActivity extends AppCompatActivity {
     }
 
 
-    private void createNotificationChannels() {
+    private void initNotificationChannels() {
         if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.O) {
-            NotificationChannel channel1 = new NotificationChannel(
+            NotificationChannel channel = new NotificationChannel(
                     CHANNEL_1_ID, "Channel 1", NotificationManager.IMPORTANCE_HIGH
             );
-            channel1.setDescription("score notification");
+            channel.setDescription("score notification");
 
             NotificationManager notificationChannel = getSystemService(NotificationManager.class);
-            notificationChannel.createNotificationChannel(channel1);
+            notificationChannel.createNotificationChannel(channel);
         }
     }
 
     private void makeNotification() {
-        String apptitle = getResources().getString(R.string.app_name);
+        String title = getResources().getString(R.string.app_name);
 
         Notification notification = new NotificationCompat.Builder(this, CHANNEL_1_ID)
                 .setSmallIcon(R.drawable.ic_launcher_background)
-                .setContentTitle(apptitle)
+                .setContentTitle(title)
                 .setContentText("Your score is " + score + " / " + MAX_QUESTIONS)
                 .setPriority(NotificationCompat.PRIORITY_HIGH)
                 .setCategory(NotificationCompat.CATEGORY_MESSAGE)
