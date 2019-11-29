@@ -1,0 +1,13 @@
+<resources>
+    <string name="app_name">Global Math Game</string>
+    <string name="title">Welcome to Global Math Game.\nPress Play to start a new game.</string>
+    <string name="playBtnTxt">PLAY</string>
+
+    <string name="answersLabel">Answers:</string>
+    <string name="skipTxt">Skip</string>
+    <string name="resetTxt">Reset</string>
+
+
+    <string name="actionsLabelTxt">Actions:</string>
+
+</resources>
