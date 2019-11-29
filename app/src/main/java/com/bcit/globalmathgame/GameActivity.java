@@ -44,8 +44,8 @@ public class GameActivity extends AppCompatActivity {
         notificationManagerCompat = NotificationManagerCompat.from(this);
 
 
-        rand = new Random(100); //ONLY FOR TEST DATA - same numbers each run time.
-        //rand = new Random(System.currentTimeMillis()); //UNCOMMENT FOR REAL DATA
+        //rand = new Random(100); //ONLY FOR TEST DATA - same numbers each run time.
+        rand = new Random(System.currentTimeMillis()); //UNCOMMENT FOR REAL DATA
 
         answerButtons = new Button[3];
         answerButtons[0] = findViewById(R.id.answer1Btn);
@@ -65,10 +65,10 @@ public class GameActivity extends AppCompatActivity {
             int ans = Integer.parseInt(b.getText().toString());
 
             if (ans == this.question.correctAns) {
-                toastTxt = "Correct!";
+                toastTxt = getResources().getString(R.string.correctTxt);;
                 score++;
             } else {
-                toastTxt = "Incorrect";
+                toastTxt = getResources().getString(R.string.incorrectTxt);;
             }
 
             Toast toast = Toast. makeText(getApplicationContext(), toastTxt, Toast. LENGTH_SHORT);
@@ -94,8 +94,12 @@ public class GameActivity extends AppCompatActivity {
         question = new GameQuestion(rand);
 
 
+        String questionLabelTxt = getResources().getString(R.string.questionLabel);
+        String scoreLabelTxt = getResources().getString(R.string.scoreLabelTxt);
+
+
         TextView questionLabel = findViewById(R.id.questionLabel);
-        questionLabel.setText("Question " + questionCount);
+        questionLabel.setText(questionLabelTxt + " " + questionCount);
 
         TextView questionText = findViewById(R.id.questionValue);
         questionText.setText(question.question);
@@ -112,7 +116,7 @@ public class GameActivity extends AppCompatActivity {
 
 
         TextView scoreTxt = findViewById(R.id.scoreTxt);
-        scoreTxt.setText("Score: " + score + "/" + MAX_QUESTIONS);
+        scoreTxt.setText(scoreLabelTxt + " " + score + "/" + MAX_QUESTIONS);
 
     }
 
@@ -158,11 +162,13 @@ public class GameActivity extends AppCompatActivity {
 
     private void makeNotification() {
         String title = getResources().getString(R.string.app_name);
+        String scoreNotificationString = getResources().getString(R.string.scoreNotificationStr);
+
 
         Notification notification = new NotificationCompat.Builder(this, CHANNEL_1_ID)
                 .setSmallIcon(R.drawable.ic_launcher_background)
                 .setContentTitle(title)
-                .setContentText("Your score is " + score + " / " + MAX_QUESTIONS)
+                .setContentText(scoreNotificationString + " " + score + " / " + MAX_QUESTIONS)
                 .setPriority(NotificationCompat.PRIORITY_HIGH)
                 .setCategory(NotificationCompat.CATEGORY_MESSAGE)
                 .build();

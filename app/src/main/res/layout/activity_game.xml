@@ -63,7 +63,7 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:textAlignment="center"
-        android:textAppearance="@style/TextAppearance.AppCompat.Large"
+        android:textAppearance="@style/TextAppearance.AppCompat.Display1"
         android:textStyle="bold"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
@@ -96,11 +96,11 @@
         app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/answer3Btn"
-        app:layout_constraintVertical_bias="0.261" />
+        app:layout_constraintVertical_bias="0.193" />
 
     <Button
         android:id="@+id/skipBtn"
-        android:layout_width="@dimen/btnSize"
+        android:layout_width="@dimen/biggerBtnSize"
         android:layout_height="wrap_content"
         android:layout_weight="1"
         android:onClick="skipQuestion"
@@ -114,17 +114,17 @@
 
     <Button
         android:id="@+id/resetBtn"
-        android:layout_width="@dimen/btnSize"
+        android:layout_width="@dimen/biggerBtnSize"
         android:layout_height="wrap_content"
         android:layout_weight="1"
         android:onClick="reset"
         android:text="@string/resetTxt"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.279"
+        app:layout_constraintHorizontal_bias="0.132"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/actionsLabel"
-        app:layout_constraintVertical_bias="0.16" />
+        app:layout_constraintVertical_bias="0.161" />
 
     <TextView
         android:id="@+id/scoreTxt"
@@ -134,9 +134,9 @@
         android:textStyle="bold"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.41"
+        app:layout_constraintHorizontal_bias="0.397"
         app:layout_constraintStart_toStartOf="@+id/resetBtn"
         app:layout_constraintTop_toBottomOf="@+id/resetBtn"
-        app:layout_constraintVertical_bias="0.491" />
+        app:layout_constraintVertical_bias="0.345" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>

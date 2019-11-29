@@ -1,0 +1,24 @@
+<resources>
+    <string name="app_name">Jeu Global Math</string>
+    <string name="title">Bienvenue à Jeu Global Math</string>
+    <string name="subtitle">Appuyez sur jouer pour commencer un nouveau jeu</string>
+    <string name="playBtnTxt">JOUER</string>
+
+    <string name="answersLabel">Réponses:</string>
+    <string name="actionsLabelTxt">Actes:</string>
+
+
+    <string name="scoreNotificationStr">Ton score est </string>
+    <string name="questionLabel">Question</string>
+    <string name="scoreLabelTxt">Répondre:</string>
+
+
+    <string name="skipTxt">Sauter</string>
+    <string name="resetTxt">Réinitialiser</string>
+
+
+    <string name="correctTxt">Correcte!</string>
+    <string name="incorrectTxt">Incorrecte</string>
+
+
+</resources>

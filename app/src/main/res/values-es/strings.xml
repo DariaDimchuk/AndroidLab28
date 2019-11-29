@@ -1,0 +1,25 @@
+<resources>
+    <string name="app_name">Juego de Matemáticas Global</string>
+    <string name="title">Bienvenido a Juego de Matemáticas Global</string>
+    <string name="subtitle">Presione jugar para comenzar un nuevo juego</string>
+
+    <string name="playBtnTxt">JUGAR</string>
+
+    <string name="answersLabel">Respuestas:</string>
+    <string name="actionsLabelTxt">Comportamiento:</string>
+
+
+    <string name="scoreNotificationStr">Tu puntaje es </string>
+    <string name="questionLabel">Pregunta</string>
+    <string name="scoreLabelTxt">Respondedor:</string>
+
+
+    <string name="skipTxt">Omitir</string>
+    <string name="resetTxt">Reiniciar</string>
+
+
+    <string name="correctTxt">Correcto!</string>
+    <string name="incorrectTxt">Incorrecto</string>
+
+
+</resources>
